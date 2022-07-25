@@ -1,0 +1,3063 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/LAGI#"
+     xml:base="http://www.semanticweb.org/ontologies/LAGI"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:LAGI="http://www.semanticweb.org/ontologies/LAGI#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/LAGI">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/ontologies/LAGI/1.0.0"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LAGI is integration ontology that integrates agile, lean and green software development approaches principles, value, policies, processes, measurements and activities into a semantic model to support sustainable software development.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#activityAffects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#activityAffects">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAffectedByActivity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activity may affect one or more indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#affects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#affects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#agileGuides -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#agileGuides">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#valueGuides"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agileSupport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agile value guides one or more agile principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#agileRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#agileRelatedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#principleRelatedIndicator"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedToAgile"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green principle is related to one or more indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#agileSupport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#agileSupport">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#principleSupports"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agile value guides one or more agile principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#allocatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#allocatedTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#allocates"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A resource is alloted to one or more activities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#allocates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#allocates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A resource is alloted to one or more activities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#calcualtedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#calcualtedWith">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#calculates"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An indicator is to be calculated using one or more analysis models.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#calculates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#calculates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An indicator is to be calculated using one or more analysis models.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#describes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#describes">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isDescribedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A software development life cycle describes one or more processes.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#generates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#generates">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGeneratedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process may generate one or many products.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#greenGuides -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#greenGuides">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#valueGuides"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenSupport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green value guides one or more green principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#greenRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#greenRelatedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#principleRelatedIndicator"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedToGreen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green principle is related to one or more indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#greenSupport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#greenSupport">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#principleSupports"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green value guides one or more green principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasActivityTask -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasActivityTask">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isTaskInActivity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activity is related to one or more related tasks.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasAgilePrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasAgilePrinciple">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAgilePrincipleOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agile approach has one or more agile principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasAgileValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasAgileValue">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAgileValueOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agile approach has one or more agile values.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasEconomicalGoals -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasEconomicalGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Economical_Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Economical_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An economical sustainability is related to one or more economical goals.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasEnvironmentalGoals -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasEnvironmentalGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Environmental_Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Environmental_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An environmental sustainability is related to one or more environmental goals.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasGreenPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasGreenPrinciple">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGreenPricipleOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green approach has one or more green principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasGreenValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasGreenValue">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGreenValueOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green approach has one or more green values.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasIndividualGoals -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasIndividualGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Individual_Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Individual_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An individual sustainability is related to one or more individual goals.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasLeanPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasLeanPrinciple">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isLeanPrincipleOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lean approach has one or more lean principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasLeanValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasLeanValue">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isLeanValueOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lean approach has one or more lean values.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasMeasurement">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isMeasurementOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure is related to one or more measurements.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasOutput">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isOutputOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A task may have one or many output products.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasProcessActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasProcessActivity">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isActivityOfProcess"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process could have one or more activities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasProcessStage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasProcessStage">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isProcessStage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process must be in a stage during its life cycle.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasRelatedPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasRelatedPrinciple">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#supportSustainability"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability dimension uses zero or more SDLC (i.e., agile, lean and green) principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasRelatedProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasRelatedProcess">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process could be related to one or more related processes.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasScale -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasScale">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isScaleOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure is related to exactly one scale.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasSocialGoals -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasSocialGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Social_Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Social_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A social sustainability is related to one or more social goals.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasStageActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasStageActivity">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isActivityofStage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage could have one or more activities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasSubActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasSubActivity">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isSubActivityOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activity may have one or more sub-activities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasSusProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasSusProcess">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability dimension is related to one or more processes.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasSustainability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasSustainability">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainable_Approach"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustianabile software development approah has one or more sustainability aspects.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasTechnicalGoals -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasTechnicalGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Technical_Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Technical_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A technical sustainability is related to one or more technical goals.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#hasUnit">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isUnitOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Unit_of_measurement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measurement is related to exactly one unit of measurement.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isActivityOfProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isActivityOfProcess">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process could have one or more activities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isActivityofStage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isActivityofStage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage could have one or more activities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isAffectedByActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isAffectedByActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#affects"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activity may affect one or more indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isAffectedByProdcut -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isAffectedByProdcut">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#affects"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productAffects"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A product may affect one or more indictors.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isAffectedByResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isAffectedByResource">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#affects"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourcesAffects"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A resource may affect one or more indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isAgilePrincipleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isAgilePrincipleOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agile approach has one or more agile principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isAgileValueOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isAgileValueOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agile approach has one or more agile values.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isBasedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isBasedOn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isUsedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Decision_criteria"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A decision criteria is based on one or more analysis models.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isDescribedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A software development life cycle describes one or more processes.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isFollowedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isFollowedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage could be followed by another stage.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isGeneratedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isGeneratedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process may generate one or many products.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isGreenPricipleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isGreenPricipleOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green approach has one or more green principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isGreenValueOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isGreenValueOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green approach has one or more green values.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isLeanPrincipleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isLeanPrincipleOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lean approach has one or more lean principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isLeanValueOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isLeanValueOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lean approach has one or more lean values.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isMeasurementOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isMeasurementOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure is related to one or more measurements.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isOutputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isOutputOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A task may have one or many output products.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isPerformedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#performs"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isProcessStage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isProcessStage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process must be in a stage during its life cycle.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isRelatedSustainability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isRelatedSustainability">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityIndicator"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An indicator is related to one or more sustainability dimensions.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isRelatedTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#principleRelatedIndicator"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isRelatedToAgile -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isRelatedToAgile">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green principle is related to one or more indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isRelatedToGreen -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isRelatedToGreen">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A green principle is related to one or more indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isRelatedToLean -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isRelatedToLean">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedTo"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanRelatedTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lean principle is  related to one or more lean indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isScaleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isScaleOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure is related to exactly one scale.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isSubActivityOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isSubActivityOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activity may have one or more sub-activities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isSupportedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isSupportedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#supportProduct"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A SDLC value (i.e., agile, lean and green) is related to one or more products.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isTaskInActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isTaskInActivity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activity is related to one or more related tasks.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isUnitOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isUnitOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Unit_of_measurement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measurement is related to exactly one unit of measurement.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isUsedBy">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A decision criteria is based on one or more analysis models.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#isUsedByProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#isUsedByProcess">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processUseResource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process may use one or more resources.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#leanGuides -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#leanGuides">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#valueGuides"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanSupport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lean value guides one or more lean principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#leanRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#leanRelatedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#principleRelatedIndicator"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lean principle is  related to one or more lean indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#leanSupport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#leanSupport">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#principleSupports"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lean value guides one or more lean principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#pSupportSusGoal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#pSupportSusGoal">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#supportByPrinciple"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability goal is supported by zero or more SDLC (i.e., agile, lean and green) principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#principleRelatedIndicator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#principleRelatedIndicator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#principleSupports -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#principleSupports"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#processUseResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#processUseResource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process may use one or more resources.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#productAffects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#productAffects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A product may affect one or more indictors.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#resourcesAffects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#resourcesAffects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A resource may affect one or more indicators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#supportByPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#supportByPrinciple">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability goal is supported by zero or more SDLC (i.e., agile, lean and green) principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#supportByValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#supportByValue">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#vSupportSusGoal"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability goals is supported by zero or more SDLC (i.e., agile, lean and green) values.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#supportProduct -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#supportProduct">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A SDLC value (i.e., agile, lean and green) is related to one or more products.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#supportSustainability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#supportSustainability">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability dimension uses zero or more SDLC (i.e., agile, lean and green) principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sustainabilityIndicator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sustainabilityIndicator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An indicator is related to one or more sustainability dimensions.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#useAgilePrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#useAgilePrinciple">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasRelatedPrinciple"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability dimension uses zero or more agile principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#useGreenPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#useGreenPrinciple">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasRelatedPrinciple"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability dimension uses zero or more green principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#useLeanPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#useLeanPrinciple">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasRelatedPrinciple"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability dimension uses zero or more lean principles.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#useResources -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#useResources">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#useTools -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#useTools">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Tool"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activity has one or more tools.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#vSupportSusGoal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#vSupportSusGoal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sustainability goals is supported by zero or more SDLC (i.e., agile, lean and green) values.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#valueGuides -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#valueGuides">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#performs -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#performs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Role"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#activityDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#activityDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#activityDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#activityDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#activityID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#activityID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#activityName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#activityName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#agilePrincipleDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#agilePrincipleDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcPrinciplesDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#agileValueDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#agileValueDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcValueDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#goalDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#goalDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalsDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#goalID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#goalID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalsDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#goalImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#goalImpact">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalsDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#goalName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#goalName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalsDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#goalsDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#goalsDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#greenPrincipleDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#greenPrincipleDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcPrinciplesDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#greenValueDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#greenValueDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcValueDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#leanPrincipleDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#leanPrincipleDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcPrinciplesDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#leanValueDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#leanValueDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcValueDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#processDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#processDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#processDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#processDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#processID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#processID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#processName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#processName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#processPurpose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#processPurpose">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#productDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#productDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#productDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#productDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#productFeatures -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#productFeatures">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#productID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#productID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#productName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#productName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#productType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#productType">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#resourceDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#resourceDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#resourceDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#resourceDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#resourceID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#resourceID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#resourceName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#resourceName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#resourcePurpose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#resourcePurpose">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#resourceType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#resourceType">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sdlcDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sdlcDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sdlcDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sdlcDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sdlcName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sdlcName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sdlcPrinciplesDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sdlcPrinciplesDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sdlcValueDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sdlcValueDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#stageDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#stageDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#stageDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#stageDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#stageDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#stageID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#stageID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#stageDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#stageName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#stageName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#stageDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sustainabilityDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sustainabilityDataProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sustainabilityDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sustainabilityDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sustainabilityFeatures -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sustainabilityFeatures">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sustainabilityID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sustainabilityID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#sustainabilityName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#sustainabilityName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#taskDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#taskDataProperties">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#taskDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#taskDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#taskDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#taskID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#taskID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#taskDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#taskName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/LAGI#taskName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#taskDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Economical_Sustainability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Economical_Sustainability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasEconomicalGoals"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Economical_goals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dimension of software sustainability determining about creating a valuable software product with taking economy into account. A software product economic impact is calculated by considering profit and making the knowledge accessible to users without impacting the individual and environmental dimensions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Economical_goals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Economical_goals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of objectives about how a software product can be produced while keeping investments of stakeholders as safe as possible from economic risks? A software product should have low process cost, long-term benefit and helps in evolving intellectual capital composing of human, structural and relationship.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Environmental_Sustainability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Environmental_Sustainability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasEnvironmentalGoals"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Environmental_goals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dimension of software sustainability that determines about environmental impacts and looking after the planet of a software product. A software product environmental impact is calculated by the usage of natural resources by minimizing resources and energy consumption during it life cycle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Environmental_goals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Environmental_goals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of objectives about how a software can be developed, applied, maintained and disposed with minimum impacts on environment? A software product should have low energy consumption and resources consumption. Resources consumption includes both hardware and software.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Green_approach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Green_approach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasGreenPrinciple"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasGreenValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasGreenPrinciple"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasGreenValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Green SDA to achieve market share goals and common profit by minimizing environmental impact and hazards while educating organizational ecological effectiveness. Green software engineering elucidates how to create sustainable software using environmentally friendly approaches.</rdfs:comment>
+        <rdfs:label xml:lang="en">Green</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Green_principle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Green_principle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenRelatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenSupport"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGreenPricipleOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenRelatedTo"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenSupport"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGreenPricipleOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenPrincipleDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of standards, policies, practices and guidelines that guide the actions of green development team and are essential for green development to conceive, build, and run green, long-term software applications.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Green_value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Green_value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenGuides"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGreenValueOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenGuides"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGreenValueOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#greenValueDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The values, qualities and skills must be present in green development team members to align with green principles and the values would be defined in green manifesto.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Individual_Sustainability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Individual_Sustainability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasIndividualGoals"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Individual_goals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dimension of software sustainability to give priority to the welfare (e.g., flexible working hours, trainings and conductive environment) of a given set of workers of a software organization. This will make workforce happier which will lead to generation of more productive software products.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Individual_goals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Individual_goals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of objectives about how a software product can be developed, produced and maintained in a way that development team is satisfied with their job for a long period of time? A software development process should keep workforce comfortable and involve in knowledge/skills constructive activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Lean_approach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Lean_approach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasLeanPrinciple"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasLeanValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasLeanPrinciple"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasLeanValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A SDA that focuses on utilizing value-adding strategies without disrupting the process and aspires for productivity with minimal wastage. The lean strategy focuses on removing or decreasing all non-value-adding tasks during product development, resulting in cost reductions at various stages of software development process. Lean principles support outstanding performance, delivering software solutions to consumers as rapidly as possible with the least amount of waste, and producing maximum value for customers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lean</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Lean_principle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Lean_principle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isLeanPrincipleOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanRelatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanSupport"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isLeanPrincipleOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanRelatedTo"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanSupport"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanPrincipleDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of standards, policies, practices and guidelines that can be applied to lean software development team and are essential for lean development to reduce waste, programming effort, and error rates while increasing efficiency. A lean principle is derived from one or more lean values.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Lean_value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Lean_value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isLeanValueOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanGuides"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isLeanValueOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanGuides"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#leanValueDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The values and qualities that must be present in lean development team members to enhance software development by rapid accommodating of customers’ requirements to improve the efficiency, and speed &amp; depth of positive changes. The lean manifest defines lean values.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#SDLC_principle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#pSupportSusGoal"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#supportSustainability"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of standards, policies, practices and guidelines that can be applied to a software development approach in its life cycle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#SDLC_value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#SDLC_value">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#supportProduct"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The values and qualities that must be present in a software development team members of a software development approach to enhance software development process.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Social_Sustainability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Social_Sustainability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasSocialGoals"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Social_goals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dimension of software sustainability that refers to the degree of involvement of users in the engineering process. For betterment of society, a software product needs to be flexible and adaptable which will increase its lifecycle and decrease its environmental and economical impacts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Social_goals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Social_goals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of objectives about how to add social capital and social added values in a software product development? The social community consisting of technical community. A software development process adds social values for technical community such as enabling participation, communication, interaction and for users community such as accessibility.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Sustainability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainability">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasRelatedPrinciple"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasSusProcess"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityIndicator"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityFeatures"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sustainabilityName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sustainability is the capability to endure and, for humans, the potential for long-term maintenance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#supportByPrinciple"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#supportByValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalImpact"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#goalName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sustainable software development goals are a series of measures to achieve sustainable software objectives in the different aspects of sustainability and are targeted in the requirements analysis phase and ensure the global well-being of human beings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Sustainable_Approach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainable_Approach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasSustainability"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sustainable SDA advocates to produce dependable and long-lasting software products that meets current user needs without jeopardizing the needs of future generations while also attempting to lessen environmental impacts.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sustainabile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Technical_Sustainability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Technical_Sustainability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasTechnicalGoals"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Technical_goals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dimension of software sustainability referring to software development supporting changes over time and long-term usage also called perdurability. The functional and technical aspect affects software survivability due to rapid changes in requirements and development and usage technologies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Technical_goals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Technical_goals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of objectives about how a software product can be developed in a way to satisfy both current and future needs and changes? The long-term usage of software from both functional and technical aspects to accommodate requirements changes and incessant technology evolution.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/LAGI#Unit_of_measurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/LAGI#Unit_of_measurement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isUnitOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isUnitOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A convention defined and adapted for a specific quantity resulted from a measurement which could be used for comparison with other quantities of the same nature in order to express it amount proportional to that quantity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isActivityOfProcess"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isActivityofStage"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isPerformedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityAffects"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasActivityTask"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasSubActivity"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isActivityOfProcess"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isActivityofStage"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isPerformedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isSubActivityOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#useResources"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#useTools"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#activityName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comprising well defined tasks and actions for producing and maintaining devices and achieving objectives of a process. An activity could be defining procedures, standards, policies and objectives to make and change a working product.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasAgilePrinciple"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasAgileValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasAgilePrinciple"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasAgileValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An iterative SDA that involves regular reviews, adaptations and delivery in increments, where requirements and solutions change over time as a result of cross-functional collaborations and participants’ feedbacks.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agile</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agileRelatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agileSupport"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAgilePrincipleOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agileRelatedTo"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agileSupport"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agilePrincipleDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of standards, policies, practices and guidelines that guide the actions of agile development team and are essential for agile development. An agile principle is derived from agile values.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agileGuides"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAgileValueOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agileGuides"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAgileValueOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#agileValueDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The values, qualities and skills that must be present in agile development team members.  The agile manifesto defines these values.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#calculates"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isBasedOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Decision_criteria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#calculates"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isBasedOn"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Decision_criteria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A statistical algorithm or calculation based on one or more measures with related decision criteria.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Decision_criteria -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Decision_criteria">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isUsedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isUsedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A threshold, target, or pattern which is used to determine requirement of further action or investigation as well as to express the level of confidence in a particular outcome.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#calcualtedWith"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedSustainability"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedToAgile"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedToGreen"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedToLean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#calcualtedWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Analysis_model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAffectedByActivity"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAffectedByProdcut"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isAffectedByResource"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedSustainability"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedToAgile"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedToGreen"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isRelatedToLean"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measuring approach derived from other measures that is using an analysis model as a measurement approach.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasMeasurement"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasMeasurement"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasScale"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A notion for measurement that represents a particular measurement in a particular measurement approach, scale and unit.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isMeasurementOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isMeasurementOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/LAGI#Unit_of_measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of actions, operations and activities that are performed to determine value of a measurement result for a certain entity’s attribute using a measurement approach.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement_approach -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement_approach">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value of a measurement result is determined by a series of actions defined in a measurement approach.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasProcessActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasProcessStage"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#generates"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasProcessActivity"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasRelatedProcess"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isDescribedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processUseResource"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourcesAffects"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasProcessStage"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processPurpose"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#processName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A coherent collection of policies, organizational structures, technologies, procedures, goals, objectives, and work products that are necessary for designing, creating, deploying, and managing a software product.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGeneratedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isGeneratedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isOutputOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isSupportedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productAffects"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productType"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productFeatures"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#productType"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A product refers to the collection of artifacts that is developed, delivered, and maintained as part of a project. The products might be input or output, and they can be required or optional. In most cases, products are tangible objects that are consumed, generated, or transformed by tasks.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isUsedByProcess"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourcesAffects"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceType"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourcePurpose"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#resourceType"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A resource is a valuable asset that are of a business need for a software organization. The software developers and tools are the two most important resources in the field of software engineering.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Role -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Role">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#performs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#performs"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A role is a responsibility, duty, skill and quality that is required to do a particular activity.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isScaleOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isScaleOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A particular collection of values having specific properties.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#describes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#describes"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcDescription"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#sdlcName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A well-defined framework consisting of phases and activities for planning, managing, analyzing, designing, developing, testing, implementing, and maintaining processes of software development.</rdfs:comment>
+        <rdfs:label xml:lang="en">SDLC</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasStageActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasStageActivity"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isFollowedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isProcessStage"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isFollowedBy"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#stageID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#stageName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#stageDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#stageID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#stageName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A period in an entity&apos;s life cycle that corresponds to the state of its description or realization. A state corresponds to a significant progress, milestone achievement, producing deliverable, and performing activity and task during its life cycle of a software project.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#hasOutput"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#isTaskInActivity"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#taskID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#taskName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#taskDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#taskID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/LAGI#taskName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A task is an element of process which signifies the action performed by a role.  The input and output operations to a product determines task.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Tool -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Tool">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In software engineering a tool is an automatic artifact that automates the performance of certain activities and tasks at different stages in an activity and process.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Economical_Sustainability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Environmental_Sustainability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Individual_Sustainability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Social_Sustainability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Technical_Sustainability"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Economical_goals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Environmental_goals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Individual_goals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Social_goals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Technical_goals"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Green_approach"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Lean_approach"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainable_Approach"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_approach"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Green_principle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Lean_principle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_principle"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Green_value"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Lean_value"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Agile_value"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#SDLC_value"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Unit_of_measurement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Decision_criteria"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement_approach"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#SDLC_principle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Unit_of_measurement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Decision_criteria"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement_approach"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Sustainability_goals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/LAGI#Unit_of_measurement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Activity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Decision_criteria"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measure"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Measurement_approach"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Process"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Product"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Resource"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Scale"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Software_development_life_cycle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/unicauca/ontologies/2018/6/OntoAgile#Task"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
